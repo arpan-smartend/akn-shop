@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arpan-smartend/MERNECOM.git"
+    "url": "git+https://github.com/arpan-smartend/akn-shop.git"
   },
   "author": "Arpan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arpan-smartend/MERNECOM/issues"
+    "url": "https://github.com/arpan-smartend/akn-shop/issues"
   },
-  "homepage": "https://github.com/arpan-smartend/MERNECOM#readme",
+  "homepage": "https://github.com/arpan-smartend/akn-shop#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
