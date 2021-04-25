@@ -1,0 +1,42 @@
+{
+  "name": "akn-shop",
+  "version": "1.0.0",
+  "description": "Arpan's Ecommerce Application",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix web",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix web && npm run build --prefix web"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arpan-smartend/MERNECOM.git"
+  },
+  "author": "Arpan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arpan-smartend/MERNECOM/issues"
+  },
+  "homepage": "https://github.com/arpan-smartend/MERNECOM#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.6",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "validator": "^13.5.1"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "concurrently": "^5.3.0"
+  }
+}
