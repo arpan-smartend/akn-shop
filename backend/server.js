@@ -41,7 +41,5 @@ app.use(errorHandler)
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () =>
-	console.log(
-		`Serve running in ${process.env.NODE_ENV} mode on port ${PORT}`.magenta.bold
-	)
+	console.log(`Serve running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 )
