@@ -199,7 +199,7 @@ const OrderScreen = () => {
 							<ListGroup.Item>
 								<Row>
 									<Col>Total</Col>
-									<Col>&#x20B9; {order?.totalPrice.toFixed(2)}</Col>
+									<Col>&#x20B9; {order?.totalPrice?.toFixed(2)}</Col>
 								</Row>
 							</ListGroup.Item>
 							<ListGroup.Item>
