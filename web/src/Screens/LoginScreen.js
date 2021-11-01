@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
 import FormContainer from '../Components/FormContainer'
-import { login } from '../actions/userActions'
+import { login } from '../store/user/userLoginSlice'
 import { useLocation, useHistory } from 'react-router-dom'
 
 const LoginScreen = () => {
@@ -28,7 +28,7 @@ const LoginScreen = () => {
 	const submitHandler = useCallback(
 		(e) => {
 			e.preventDefault()
-			dispatch(login(email, password))
+			dispatch(login({ email, password }))
 		},
 		[dispatch, email, password]
 	)

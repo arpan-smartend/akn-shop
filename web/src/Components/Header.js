@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
-import { logout } from '../actions/userActions'
+import { logout } from '../store/user/userLoginSlice'
 import { useHistory } from 'react-router-dom'
 import SearchBox from './SearchBox'
 

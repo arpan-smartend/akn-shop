@@ -4,7 +4,8 @@ import { Table, Button } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
-import { fetchAllUsers, deleteUser } from '../actions/userActions'
+import { fetchAllUsers } from '../store/user/userListSlice'
+import { deleteUser } from '../store/user/userDeleteSlice'
 
 const UserListScreen = () => {
 	const dispatch = useDispatch()

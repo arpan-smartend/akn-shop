@@ -3,7 +3,7 @@ import { Form, Button, Col } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import FormContainer from '../Components/FormContainer'
 import { useHistory } from 'react-router-dom'
-import { savePaymentMethod } from '../actions/cartActions'
+import { savePaymentMethod } from '../store/cart/cartSlice'
 import CheckoutSteps from '../Components/CheckoutSteps'
 
 const PaymentScreen = () => {

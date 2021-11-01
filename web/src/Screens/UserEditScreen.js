@@ -5,11 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
 import FormContainer from '../Components/FormContainer'
-import {
-	userDetails,
-	updateUser,
-	updateUserReset
-} from '../actions/userActions'
+import { userDetails } from '../store/user/userDetailsSlice'
+import { updateUser, updateUserReset } from '../store/user/userUpdateSlice'
 import { useHistory, useParams } from 'react-router-dom'
 
 const UserEditScreen = () => {
@@ -22,9 +19,11 @@ const UserEditScreen = () => {
 	const history = useHistory()
 
 	const { loading, error, user } = useSelector((state) => state.userDetails)
-	const { loading: loadingUpdate, error: errorUpdate, success } = useSelector(
-		(state) => state.userUpdate
-	)
+	const {
+		loading: loadingUpdate,
+		error: errorUpdate,
+		success
+	} = useSelector((state) => state.userUpdate)
 
 	useEffect(() => {
 		if (!user || user._id !== userId) {

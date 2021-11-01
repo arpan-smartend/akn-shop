@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../Components/Product'
-import { listProducts } from '../actions/productActions'
+import { listProducts } from '../store/product/productListSlice'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
 import ProductCarousel from '../Components/ProductCarousel'
@@ -14,7 +14,7 @@ const HomeScreen = () => {
 
 	const dispatch = useDispatch()
 	const fetchProducts = useCallback(
-		(keyword, pageNumber) => dispatch(listProducts(keyword, pageNumber)),
+		(keyword, pageNumber) => dispatch(listProducts({ keyword, pageNumber })),
 		[dispatch]
 	)
 	const { loading, products, error, pages, page } = useSelector(

@@ -6,12 +6,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
 import Paginate from '../Components/Paginate'
+import { listProducts } from '../store/product/productListSlice'
+import { deleteProduct } from '../store/product/productDeleteSlice'
 import {
-	listProducts,
-	deleteProduct,
 	createProduct,
 	createProductReset
-} from '../actions/productActions'
+} from '../store/product/productCreateSlice'
 
 const ProductListScreen = () => {
 	const { pageNumber = 1 } = useParams()
@@ -35,12 +35,12 @@ const ProductListScreen = () => {
 
 	useEffect(() => {
 		dispatch(createProductReset())
-		dispatch(listProducts('', pageNumber))
+		dispatch(listProducts({ keyword: '', pageNumber }))
 	}, [dispatch, pageNumber])
 
 	useEffect(() => {
 		if (productDeleteSuccess) {
-			dispatch(listProducts('', pageNumber))
+			dispatch(listProducts({ keyword: '', pageNumber }))
 		}
 	}, [dispatch, productDeleteSuccess, pageNumber])
 

@@ -5,11 +5,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
 import FormContainer from '../Components/FormContainer'
+import { listProductDetail } from '../store/product/productDetailsSlice'
 import {
-	listProductDetail,
 	updateProduct,
 	updateProductReset
-} from '../actions/productActions'
+} from '../store/product/productUpdateSlice'
 import { useHistory, useParams } from 'react-router-dom'
 import axios from 'axios'
 

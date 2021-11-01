@@ -4,7 +4,7 @@ import { Table, Button, Row, Col } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
-import { fetchAllOrders } from '../actions/orderActions'
+import { fetchAllOrders } from '../store/order/orderFetchAllOrdersSlice'
 
 const OrderListScreen = () => {
 	const dispatch = useDispatch()

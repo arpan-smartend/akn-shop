@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
 import FormContainer from '../Components/FormContainer'
-import { register } from '../actions/userActions'
+import { register } from '../store/user/userRegisterSlice'
 import { useHistory, useLocation } from 'react-router-dom'
 
 const RegisterScreen = () => {
@@ -42,7 +42,7 @@ const RegisterScreen = () => {
 				setMessage('Passwords do not match')
 			} else {
 				setMessage(null)
-				dispatch(register(name, email, password))
+				dispatch(register({ name, email, password }))
 			}
 		},
 		[dispatch, email, password, name, confirmPassword]

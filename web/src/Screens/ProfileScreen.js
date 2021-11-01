@@ -5,14 +5,13 @@ import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
+import { fetchMyOrders } from '../store/order/orderFetchMyOrdersSlice'
+import { useHistory } from 'react-router-dom'
+import { userDetails } from '../store/user/userDetailsSlice'
 import {
-	userDetails,
 	updateUserProfile,
 	updateProfileReset
-} from '../actions/userActions'
-
-import { fetchMyOrders } from '../actions/orderActions'
-import { useHistory } from 'react-router-dom'
+} from '../store/user/userUpdateProfileSlice'
 
 const ProfileScreen = () => {
 	const [email, setEmail] = useState('')

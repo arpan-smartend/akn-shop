@@ -14,11 +14,12 @@ import {
 	FormControl
 } from 'react-bootstrap'
 import Rating from '../Components/Rating'
+import { listProductDetail } from '../store/product/productDetailsSlice'
 import {
-	listProductDetail,
 	createProductReview,
 	createReviewReset
-} from '../actions/productActions'
+} from '../store/product/productCreateReviewSlice'
+
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
 
@@ -42,9 +43,12 @@ const ProductScreen = () => {
 		(state) => state.productDetails
 	)
 
-	const { loading: crLoading, message, success, error: crError } = useSelector(
-		(state) => state.productCreateReview
-	)
+	const {
+		loading: crLoading,
+		message,
+		success,
+		error: crError
+	} = useSelector((state) => state.productCreateReview)
 
 	useEffect(() => {
 		fetchProductDetail()
@@ -93,7 +97,7 @@ const ProductScreen = () => {
 
 	const submitHandler = (e) => {
 		e.preventDefault()
-		dispatch(createProductReview(id, { rating, comment }))
+		dispatch(createProductReview({ id, rating, comment }))
 	}
 
 	return (

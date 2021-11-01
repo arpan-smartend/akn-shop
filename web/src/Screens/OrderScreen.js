@@ -12,14 +12,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
-import { getOrderDetails } from '../actions/orderActions'
+import { getOrderDetails } from '../store/order/orderDetailsSlice'
 import { useParams } from 'react-router-dom'
+import { payOrder, resetPaymentState } from '../store/order/orderPaySlice'
 import {
-	payOrder,
-	resetPaymentState,
 	deliverOrder,
 	resetDeliveryState
-} from '../actions/orderActions'
+} from '../store/order/orderDeliverSlice'
 
 const OrderScreen = () => {
 	const { id } = useParams()

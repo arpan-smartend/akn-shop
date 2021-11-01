@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Carousel, Image } from 'react-bootstrap'
 import Loader from './Loader'
 import Message from './Message'
-import { listTopRatedProducts } from '../actions/productActions'
+import { listTopRatedProducts } from '../store/product/productTopRatedSlice'
 
 const ProductCarousel = () => {
 	const dispatch = useDispatch()

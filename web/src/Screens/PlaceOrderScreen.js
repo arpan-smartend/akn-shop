@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom'
 import CheckoutSteps from '../Components/CheckoutSteps'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
-import { createOrder, resetOrderState } from '../actions/orderActions'
+
 import { useHistory } from 'react-router-dom'
+import { createOrder, resetOrderState } from '../store/order/orderCreateSlice'
 
 const PlaceOrderScreen = () => {
 	const history = useHistory()

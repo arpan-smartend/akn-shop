@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link, useLocation, useHistory, useParams } from 'react-router-dom'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../Components/Message'
-import { addToCart, removeFromCart } from '../actions/cartActions'
+import { addToCart, removeFromCart } from '../store/cart/cartSlice'
 
 const CartScreen = () => {
 	const { id: productId } = useParams()
@@ -15,7 +15,7 @@ const CartScreen = () => {
 
 	const addToCartAction = useCallback(() => {
 		if (productId) {
-			dispatch(addToCart(productId, qty))
+			dispatch(addToCart({ id: productId, qty }))
 		}
 	}, [dispatch, productId, qty])
 
@@ -57,7 +57,9 @@ const CartScreen = () => {
 								as='select'
 								value={item.qty}
 								onChange={(e) =>
-									dispatch(addToCart(item.product, Number(e.target.value)))
+									dispatch(
+										addToCart({ id: item.product, qty: Number(e.target.value) })
+									)
 								}
 							>
 								{[...Array(item.countInStock).keys()].map((item) => (
